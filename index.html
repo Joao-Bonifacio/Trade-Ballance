@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="João Bonifácio">
+    <meta name="description" content="gráfico de variação patrimonial dinâmico">
+    <meta name="keywords" content="trade,patrimonio,grafico,analise">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrimônio</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/chart_config.js" defer></script>
+    <script type="module" src="js/script.js" defer></script>   
+    <link rel="stylesheet" href="css/page.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Variação patrimonial</h1>
+    </header>
+    <form method="#" class="min-form">
+        <div>
+            <input type="text" id="date" placeholder="id (eixo x)" required min="1" max="1">
+            <input type="number" placeholder="variação" id="val" min="0" required>
+            <fieldset class="down">
+                <span><label for="take"><abbr title="resultado positivo">Take</abbr></label><input type="radio" name="Take/Loss" value="take" class="radio" id="take" checked></span>
+                <span><label for="loss"><abbr title="resultado negativo">Loss</abbr></label><input type="radio" name="Take/Loss" value="loss" class="radio" id="loss"></span>
+            </fieldset>
+            <button id="send">Adicionar</button>
+        </div>
+    </form>
+    <div class="content">
+        <canvas id="myChart"></canvas>
+        <div id="feetChart">
+            <div class="feet_child init"> <!--o init é para futuras validações (para não ser modificado)-->
+                <p>Valor</p>
+                <p>Opções <span style="padding-left:40px;cursor: pointer;"><i class="fas fa-arrow-down"></i></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
