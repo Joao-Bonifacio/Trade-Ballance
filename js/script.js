@@ -1,4 +1,3 @@
-const icons = '<i class="fas fa-pen"></i>'
 var arrField = []
 var arrData = []
 var arrVal = []
@@ -28,9 +27,20 @@ if (localStorage.val != undefined) {
         let divFactory = document.createElement('div')
         let pFactory = document.createElement('p')
         let content = document.createTextNode(arrVal[i])
+        let spanFactory = document.createElement('span')
+        let p2 = document.createElement('p')
+        let iFactoryPen = document.createElement('i')
+        let iFactoryTrash = document.createElement('i') 
+
+        iFactoryPen.setAttribute('class','fas fa-pen')
+        iFactoryTrash.setAttribute('class','fas fa-trash')
+        spanFactory.appendChild(iFactoryPen)
+        spanFactory.appendChild(iFactoryTrash)
+        p2.appendChild(spanFactory)
         divFactory.classList.add('feet_child')
         pFactory.appendChild(content)
         divFactory.appendChild(pFactory)
+        divFactory.appendChild(p2)
         feetChart.appendChild(divFactory)
     }//i = 1 para não pegar o primeiro valor de localStorage.val que é null
 }else{

@@ -18,6 +18,9 @@ header > h1{
 abbr{
     text-decoration: none;
 }
+i{
+    padding-right: 10px;
+}
 .content{
     width: 80%;
     margin: auto;
