@@ -32,12 +32,15 @@
     </form>
     <div class="content">
         <canvas id="myChart"></canvas>
-        <div id="feetChart">
-            <div class="feet_child init"> <!--o init é para futuras validações (para não ser modificado)-->
-                <p>Valor</p>
-                <p>Opções <span style="padding-left:40px;cursor: pointer;"><i class="fas fa-arrow-down"></i></span></p>
-            </div>
+        <div class="feet_child_init">
+            <p>Valor</p>
+            <p>Opções</p>
         </div>
+
+        <div class="feet_child_init" id="more" style="margin-top: -25px;background-image: linear-gradient(rgb(169, 192, 192), rgba(56, 78, 78, 0.527));border-radius: 0 0 10px 10px;text-align: center;">
+            <p><abbr title="mostrar mais"><span style="padding-left:40px;cursor: pointer;"><i class="fas fa-arrow-down" id="arrow"></i></span></abbr></p>  
+        </div>
+        <div id="feetChart"></div>
     </div>
 </body>
 </html>

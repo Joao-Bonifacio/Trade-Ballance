@@ -18,12 +18,10 @@ header > h1{
 abbr{
     text-decoration: none;
 }
-i{
-    padding-right: 10px;
-}
+
 .content{
     width: 80%;
-    margin: auto;
+    margin: 30px auto;
     background-color: #8f86b4;
     padding: 40px;
     border-radius: 5px;
@@ -76,10 +74,7 @@ input[type="radio"]{
     cursor: pointer;
     transform: translateY(20%);
 }
-.feetChart{
-    width: 80%;
-}
-.feet_child{
+.feet_child,.feet_child_init{
     color: white;
     display: flex;
     width: 95%;
@@ -89,9 +84,21 @@ input[type="radio"]{
     border-radius: 7px;
     padding: 10px;
 }
-.feet_child > p{
+.feet_child > p,.feet_child_init > p{
     flex: 1;
 }
-.feet_child > p:nth-child(2){
+.feet_child > p:nth-child(2),.feet_child_init > p:nth-child(2){
     text-align: right;
+}
+i{
+    padding-right: 10px;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.clk{
+    cursor: pointer;
+}
+#more:hover,#less:hover{
+    background-color: rgba(120, 243, 243, 0.658);
+    cursor: pointer;
 }
