@@ -39,5 +39,3 @@ const myChart = new Chart(ctx, {
         }
     }
 })
-//lapis <i class="fas fa-pen"></i>
-//lixeira <i class="fas fa-trash"></i>
