@@ -9,7 +9,16 @@ var arrow = document.getElementById('arrow')
 arrField = localStorage.getItem('x')
 arrData = localStorage.getItem('y')
 arrVal = localStorage.getItem('val')
+/*to do
 
+função{
+//console.log(feetChart.childNodes.length)
+//aplicar eventListner em cada icone dos child
+//pegar os childNodes do feetChart e editar/excluir de acordo com o eventListner aplicado em cada icone
+//excluir do localStorage
+}
+
+*/
 if (localStorage.x == undefined){
     //adicionando os primeiros valores em localStorage
     let saldo_inicial = prompt("Informe o saldo inicial:")
@@ -20,6 +29,9 @@ if (localStorage.x == undefined){
 }else{
     arrField = localStorage.x.split(',')
     arrData = localStorage.y.split(',')
+}
+if (localStorage.val == undefined) {
+    localStorage.setItem('val',arrVal)
 }
 
 const setChart = (x,y)=>{
@@ -37,7 +49,8 @@ const setChart = (x,y)=>{
         localStorage.y = arrData
 
         //adicionando somente o valor de take abaixo do grafico
-        arrVal = localStorage.val.split(',')
+        arrVal = localStorage.val
+        arrVal = arrVal.split(',')
         arrVal.push(`+${y}`)
         localStorage.val = arrVal
     }else{
@@ -48,7 +61,8 @@ const setChart = (x,y)=>{
         localStorage.y = arrData
 
         //adicionando somente o valor de loss abaixo do grafico
-        arrVal = localStorage.val.split(',')
+        arrVal = localStorage.val
+        arrVal = arrVal.split(',')
         arrVal.push(`-${y}`)
         localStorage.val = arrVal
     }
@@ -95,21 +109,21 @@ document.querySelector('#send').addEventListener('click',()=>{
         alert('Erro: Passe todos os valores do formulário')
     }
 })
+
 arrow.addEventListener('click',()=>{
     if (arrow.classList.contains('fa-arrow-down')) {
         setFeetChart('down')
-        arrow.style = 'margin-top: -25px;border-radius: 0 0 10px 10px;text-align: center;'
         arrow.removeAttribute('class')
         arrow.setAttribute('class','fas fa-arrow-up')
         arrow.parentElement.parentElement.setAttribute('title','mostrar menos')
     }else{
         setFeetChart('up')
-        arrow.style = 'margin-top: -25px;border-radius: 0 0 10px 10px;text-align: center;'
         arrow.removeAttribute('class')
         arrow.setAttribute('class','fas fa-arrow-down')
         arrow.parentElement.parentElement.setAttribute('title','mostrar mais')
     }
 })
+
 const getLabels = ()=>{
     return arrField
 }
