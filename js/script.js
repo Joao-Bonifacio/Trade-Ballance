@@ -1,6 +1,7 @@
 var arrField = []
 var arrData = []
 var arrVal = []
+var yInit
 var date = document.getElementById('date')
 var val = document.getElementById('val')
 var radio = document.querySelectorAll('.radio')
@@ -21,11 +22,12 @@ função{
 */
 if (localStorage.x == undefined){
     //adicionando os primeiros valores em localStorage
-    let saldo_inicial = prompt("Informe o saldo inicial:")
+    yInit = prompt("Informe o saldo inicial:")
     arrField = ['Inicial']
-    arrData = [saldo_inicial]
+    arrData = [yInit]
     localStorage.setItem('x',arrField)
     localStorage.setItem('y',arrData)
+    //localStorage.initY = yInit
 }else{
     arrField = localStorage.x.split(',')
     arrData = localStorage.y.split(',')
@@ -102,30 +104,38 @@ const setFeetChart = (t)=>{
                     arrData = localStorage.y.split(',')
                     arrVal = localStorage.val.split(',')
                     let n_val = parseFloat(prompt('informe o novo valor'))
-                    let n_tkls = parseFloat(prompt('foi take(positivo) ou loss(negativo)'))
+                    let n_tkls = prompt('foi take(positivo) ou loss(negativo)')
                     //trocar valor de arrField,arrData,arrVal na posição i
-                    arrData[i] = n_val
+                    
                     if (n_tkls == 'take') {
+                        arrData[i+1] = parseFloat(arrData[i]) + n_val
                         arrVal[i + 1] = `+${n_val}`
+                        localStorage.y = arrData
+                    }else if(n_tksl == 'loss'){
+                        arrData[i+1] = parseFloat(arrData[i]) + n_val
+                        arrVal[i + 1] = `-${n_val}`
+                        localStorage.y = arrData
                     }else{
-                        arrVal[i + 1] = `-${nval}`
+                        alert('valor inválido')
                     }
+                    console.log(arrVal)
 
                     //editar o filho coreespondente
-                    //terminar amanhã
+                    feetChart.childNodes[i].childNodes[1].childNodes[0].childNodes[0].innerHtml = arrVal[i + 1]
 
                     //update no localStorage
                     localStorage.y = arrData
                     localStorage.val = arrVal
+                    location.reload()
                 })
                 feetChart.childNodes[i].childNodes[1].childNodes[0].childNodes[1].addEventListener('click',()=>{
                     arrField = localStorage.x.split(',')
                     arrData = localStorage.y.split(',')
                     arrVal = localStorage.val.split(',')
                     //remover valor de arrField,arrData,arrVal na posição i
-                    arrField.splice(i,1)
-                    arrData.splice(i,1)
-                    arrVal.splice(i,1)
+                    arrField.splice(i+1,1) //o i+1 serve para deixar os valores iniciais inalterados
+                    arrData.splice(i+1,1)
+                    arrVal.splice(i+1,1)
 
                     //remover o filho correspondente
                     feetChart.childNodes[i].innerHTML = ""
@@ -134,6 +144,7 @@ const setFeetChart = (t)=>{
                     localStorage.x = arrField
                     localStorage.y = arrData
                     localStorage.val = arrVal
+                    location.reload()
                 })
             }
             //----------
