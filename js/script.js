@@ -2,6 +2,7 @@ var arrField = []
 var arrData = []
 var arrVal = []
 var yInit
+var reset = document.getElementById('reset')
 var date = document.getElementById('date')
 var val = document.getElementById('val')
 var radio = document.querySelectorAll('.radio')
@@ -141,6 +142,7 @@ const setFeetChart = (t)=>{
 
                     //remover o filho correspondente
                     feetChart.childNodes[i].innerHTML = ""
+                    calc()
 
                     //update no localStorage
                     localStorage.x = arrField
@@ -179,6 +181,13 @@ arrow.addEventListener('click',()=>{
         arrow.removeAttribute('class')
         arrow.setAttribute('class','fas fa-arrow-down')
         arrow.parentElement.parentElement.setAttribute('title','mostrar mais')
+    }
+})
+reset.addEventListener('click',()=>{
+    let r = confirm('Tem certeza que deseja resetar o gráfico?')
+    if (r == true) {
+        localStorage.clear()
+        location.reload()
     }
 })
 

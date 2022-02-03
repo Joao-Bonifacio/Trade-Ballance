@@ -58,7 +58,20 @@ fieldset{
     border-radius: 30px;
     background-color: rgb(199, 210, 219);
     cursor: pointer;
-    /*transform: translateY(-15%);*/
+}
+#reset{
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgb(199, 210, 219);
+    cursor: pointer;
+    width: 25px;
+    display: inline-block;
+}
+#reset abbr>i{
+    padding: 0;
+}
+#reset:hover{
+    background-color: rgb(114, 163, 202);
 }
 #myChart{
     background-color: rgb(199, 210, 219);
