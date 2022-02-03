@@ -2,7 +2,7 @@ var arrField = []
 var arrData = []
 var arrVal = []
 var yInit
-var reset = document.getElementById('reset')
+var reset = document.getElementById('reset_g')
 var date = document.getElementById('date')
 var val = document.getElementById('val')
 var radio = document.querySelectorAll('.radio')
