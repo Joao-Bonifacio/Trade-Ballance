@@ -94,14 +94,51 @@ const setFeetChart = (t)=>{
                 divFactory.appendChild(p2)
                 feetChart.appendChild(divFactory)
             }//i = 1 para não pegar o primeiro valor de localStorage.val que é null
+
+
+            //setando os edits/remove do feetChart
             for (let i = 0; i < feetChart.childNodes.length; i++) {
                 feetChart.childNodes[i].childNodes[1].childNodes[0].childNodes[0].addEventListener('click',()=>{
-                    //função edit
+                    arrData = localStorage.y.split(',')
+                    arrVal = localStorage.val.split(',')
+                    let n_val = parseFloat(prompt('informe o novo valor'))
+                    let n_tkls = parseFloat(prompt('foi take(positivo) ou loss(negativo)'))
+                    //trocar valor de arrField,arrData,arrVal na posição i
+                    arrData[i] = n_val
+                    if (n_tkls == 'take') {
+                        arrVal[i + 1] = `+${n_val}`
+                    }else{
+                        arrVal[i + 1] = `-${nval}`
+                    }
+
+                    //editar o filho coreespondente
+                    //terminar amanhã
+
+                    //update no localStorage
+                    localStorage.y = arrData
+                    localStorage.val = arrVal
                 })
                 feetChart.childNodes[i].childNodes[1].childNodes[0].childNodes[1].addEventListener('click',()=>{
-                    //função remove
+                    arrField = localStorage.x.split(',')
+                    arrData = localStorage.y.split(',')
+                    arrVal = localStorage.val.split(',')
+                    //remover valor de arrField,arrData,arrVal na posição i
+                    arrField.splice(i,1)
+                    arrData.splice(i,1)
+                    arrVal.splice(i,1)
+
+                    //remover o filho correspondente
+                    feetChart.childNodes[i].innerHTML = ""
+
+                    //update no localStorage
+                    localStorage.x = arrField
+                    localStorage.y = arrData
+                    localStorage.val = arrVal
                 })
             }
+            //----------
+
+
         }else{
             localStorage.setItem('val',arrVal)
         }
