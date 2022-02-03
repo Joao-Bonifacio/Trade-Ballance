@@ -90,6 +90,9 @@ input[type="radio"]{
 .feet_child > p:nth-child(2),.feet_child_init > p:nth-child(2){
     text-align: right;
 }
+#more:hover{
+    background-color: rgba(31, 119, 119, 0.767);
+}
 i{
     padding-right: 10px;
     font-size: 25px;

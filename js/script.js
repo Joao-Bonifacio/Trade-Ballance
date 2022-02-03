@@ -94,6 +94,14 @@ const setFeetChart = (t)=>{
                 divFactory.appendChild(p2)
                 feetChart.appendChild(divFactory)
             }//i = 1 para não pegar o primeiro valor de localStorage.val que é null
+            for (let i = 0; i < feetChart.childNodes.length; i++) {
+                feetChart.childNodes[i].childNodes[1].childNodes[0].childNodes[0].addEventListener('click',()=>{
+                    //função edit
+                })
+                feetChart.childNodes[i].childNodes[1].childNodes[0].childNodes[1].addEventListener('click',()=>{
+                    //função remove
+                })
+            }
         }else{
             localStorage.setItem('val',arrVal)
         }
