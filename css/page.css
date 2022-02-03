@@ -35,14 +35,21 @@ abbr{
     background-color: #8f86b4;
     border-radius: 5px;
     max-width: 1180px;
+    
+}
+.min-form > div{
+    transform: translateY(20px);
 }
 .min-form input{
     padding: 7px;
     border-radius: 8px;
     margin: 20px 5px;
-    transform: translateY(-20%);
     background-color: rgb(199, 210, 219);
 }
+fieldset{
+    padding: 0;
+}
+
 #date{
     width: 88px;
 }
@@ -51,7 +58,7 @@ abbr{
     border-radius: 30px;
     background-color: rgb(199, 210, 219);
     cursor: pointer;
-    transform: translateY(-15%);
+    /*transform: translateY(-15%);*/
 }
 #myChart{
     background-color: rgb(199, 210, 219);
