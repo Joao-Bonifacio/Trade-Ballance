@@ -44,7 +44,7 @@ abbr{
     background-color: rgb(199, 210, 219);
 }
 #date{
-    width: 60px;
+    width: 88px;
 }
 #send{
     padding: 5px 10px;
@@ -95,9 +95,12 @@ input[type="radio"]{
     background-color: rgba(31, 119, 119, 0.767);
 }
 i{
-    padding-right: 10px;
+    padding-right: 15px;
     font-size: 25px;
     background-color: rgba(0, 0, 0, 0);
+}
+#arrow{
+    padding: 0;
 }
 .clk{
     cursor: pointer;
@@ -112,6 +115,7 @@ footer > div{
     text-align: center;
     color: rgb(51, 51, 51);
     margin-top: 15px;
+    border-right: 1px solid rgba(138, 112, 211, 0.616);
 }
 footer h3{
     padding-bottom: 8px;
