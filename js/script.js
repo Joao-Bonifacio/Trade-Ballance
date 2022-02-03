@@ -10,16 +10,7 @@ var arrow = document.getElementById('arrow')
 arrField = localStorage.getItem('x')
 arrData = localStorage.getItem('y')
 arrVal = localStorage.getItem('val')
-/*to do
 
-função{
-//console.log(feetChart.childNodes.length)
-//aplicar eventListner em cada icone dos child
-//pegar os childNodes do feetChart e editar/excluir de acordo com o eventListner aplicado em cada icone
-//excluir do localStorage
-}
-
-*/
 if (localStorage.x == undefined){
     //adicionando os primeiros valores em localStorage
     yInit = prompt("Informe o saldo inicial:")
@@ -70,6 +61,20 @@ const setChart = (x,y)=>{
     }
 }
 
+const calc = ()=>{
+    for (let i = 1; i < arrVal.length; i++) {
+        if (arrVal[i][0] == '+') {
+            let x = arrVal[i].split('+')
+            arrData[i] = Number(arrData[i-1]) + Number(x[1])
+            localStorage.y = arrData
+        }else{
+            let x = arrVal[i].split('-')
+            arrData[i] = Number(arrData[i-1]) - Number(x[1])
+            localStorage.y = arrData
+        }
+    }
+}
+
 const setFeetChart = (t)=>{
     //adicionar os valores ao clicar na seta para baixo
     if (t == 'down') {
@@ -108,17 +113,14 @@ const setFeetChart = (t)=>{
                     //trocar valor de arrField,arrData,arrVal na posição i
                     
                     if (n_tkls == 'take') {
-                        arrData[i+1] = parseFloat(arrData[i]) + n_val
-                        arrVal[i + 1] = `+${n_val}`
-                        localStorage.y = arrData
-                    }else if(n_tksl == 'loss'){
-                        arrData[i+1] = parseFloat(arrData[i]) + n_val
-                        arrVal[i + 1] = `-${n_val}`
-                        localStorage.y = arrData
+                        arrVal[i+1] = `+${n_val}`
+                        calc()
+                    }else if(n_tkls == 'loss'){
+                        arrVal[i+1] = `-${n_val}`
+                        calc()
                     }else{
                         alert('valor inválido')
                     }
-                    console.log(arrVal)
 
                     //editar o filho coreespondente
                     feetChart.childNodes[i].childNodes[1].childNodes[0].childNodes[0].innerHtml = arrVal[i + 1]
