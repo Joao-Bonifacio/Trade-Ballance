@@ -7,3 +7,5 @@ De acordo com os valores adicionados, calcula a variação patrimonial e a exibe
 # Como usar
 1: Adicionar o valor inicial do patrimônio investido
 2: Adicionar o id/nome (nome de cada operação/dia/mês) juntamente com o valor da variação e informar se o valor foi positivo(take) ou negativo(loss)
+
+# [Clique aqui para acessar o site](https://trade-ballance.web.app/)
