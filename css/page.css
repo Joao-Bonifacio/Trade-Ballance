@@ -29,7 +29,7 @@ abbr{
     max-width: 1100px;
 }
 .min-form{
-    height: 120px;
+    height: 150px;
     margin: 30px auto;
     text-align: center;
     background-color: #8f86b4;
@@ -91,6 +91,9 @@ input[type="radio"]{
 .feet_child > p:nth-child(2),.feet_child_init > p:nth-child(2){
     text-align: right;
 }
+#more > p{
+    text-align: center;
+}
 #more:hover{
     background-color: rgba(31, 119, 119, 0.767);
 }
@@ -99,8 +102,8 @@ i{
     font-size: 25px;
     background-color: rgba(0, 0, 0, 0);
 }
-#arrow{
-    padding: 0;
+.feet_child > #arrow{
+    padding: 0 !important;
 }
 .clk{
     cursor: pointer;

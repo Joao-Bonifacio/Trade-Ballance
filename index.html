@@ -9,6 +9,7 @@
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrimônio</title>
+    <script src="js/firebase_config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/chart_config.js" defer></script>
     <script type="module" src="js/script.js" defer></script>   
@@ -38,7 +39,7 @@
         </div>
 
         <div class="feet_child_init" id="more" style="margin-top: -25px;background-image: linear-gradient(rgb(169, 192, 192), rgba(56, 78, 78, 0.527));border-radius: 0 0 10px 10px;text-align: center;">
-            <p><abbr title="mostrar mais"><span style="padding-left:40px;cursor: pointer;"><i class="fas fa-arrow-down" id="arrow"></i></span></abbr></p>  
+            <p><abbr title="mostrar mais"><span style="cursor: pointer;"><i class="fas fa-arrow-down" id="arrow" style="padding: 0;"></i></span></abbr></p>  
         </div>
         <div id="feetChart"></div>
     </div>
